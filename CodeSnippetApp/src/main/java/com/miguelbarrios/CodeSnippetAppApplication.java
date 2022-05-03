@@ -8,8 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.miguelbarrios.entities.GroceryItem;
-import com.miguelbarrios.entities.ItemRepository;
+import com.miguelbarrios.data.GroceryItem;
+import com.miguelbarrios.data.ItemRepository;
 
 @SpringBootApplication
 @EnableMongoRepositories
