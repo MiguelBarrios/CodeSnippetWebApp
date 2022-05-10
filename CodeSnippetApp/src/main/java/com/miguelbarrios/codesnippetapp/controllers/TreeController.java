@@ -1,7 +1,5 @@
 package com.miguelbarrios.codesnippetapp.controllers;
 
-import java.util.Optional;
-
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.miguelbarrios.codesnippetapp.entities.Directory;
-import com.miguelbarrios.codesnippetapp.entities.SnippetTree;
 import com.miguelbarrios.codesnippetapp.entities.User;
-import com.miguelbarrios.codesnippetapp.repositories.SnippetTreeRepository;
 import com.miguelbarrios.codesnippetapp.services.SnippetTreeService;
 
 @RestController
@@ -25,6 +21,14 @@ public class TreeController {
 	
 	@Autowired
 	SnippetTreeService treeService;
+	
+	@PostMapping("trees")
+	public Directory addTree(@RequestBody Directory dir) {
+		User user = new User();
+		user.setUsername("locnessbarrios");
+		Directory res = treeService.addTree(dir, user);
+		return res;
+	}
 	
 	@GetMapping("trees/{treename}")
 	public Directory getTree(@PathVariable String treename, HttpServletResponse res) {

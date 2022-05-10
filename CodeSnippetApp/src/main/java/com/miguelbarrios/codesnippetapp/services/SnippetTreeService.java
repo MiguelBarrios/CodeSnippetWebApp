@@ -8,4 +8,6 @@ public interface SnippetTreeService {
 	Directory getTreeByName(String treename, User user);
 
 	Directory updateTree(Directory root, User user);
+
+	Directory addTree(Directory root, User user);
 }

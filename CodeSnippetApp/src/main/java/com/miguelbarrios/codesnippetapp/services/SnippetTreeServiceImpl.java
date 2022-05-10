@@ -17,6 +17,16 @@ public class SnippetTreeServiceImpl implements SnippetTreeService {
 	private SnippetTreeRepository treeRepo;
 	
 	@Override
+	public Directory addTree(Directory root, User user) {
+		String treeid = user.getUsername() + ":" + root.getName();
+		SnippetTree tree = new SnippetTree();
+		tree.setTreeId(treeid);
+		tree.setRoot(root);
+		tree = treeRepo.save(tree);
+		return tree.getRoot();
+	}
+	
+	@Override
 	public Directory getTreeByName(String treename, User user) {
 		String treeid = user.getUsername() + ":" + treename;
 		Optional<SnippetTree> option = treeRepo.findById(treeid);
