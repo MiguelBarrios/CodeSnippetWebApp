@@ -1,8 +1,8 @@
-package com.miguelbarrios.repositories;
+package com.miguelbarrios.codesnippetapp.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.miguelbarrios.data.User;
+import com.miguelbarrios.codesnippetapp.entities.User;
 
 public interface UserRepository extends MongoRepository<User, String> {
 

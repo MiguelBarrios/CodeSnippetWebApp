@@ -1,4 +1,4 @@
-package com.miguelbarrios;
+package com.miguelbarrios.codesnippetapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

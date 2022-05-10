@@ -1,4 +1,4 @@
-package com.miguelbarrios.entities;
+package com.miguelbarrios.codesnippetapp.entities;
 
 import java.util.Arrays;
 import java.util.List;
