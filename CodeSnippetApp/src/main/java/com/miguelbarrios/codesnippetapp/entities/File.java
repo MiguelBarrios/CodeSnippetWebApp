@@ -1,4 +1,4 @@
-package com.miguelbarrios.entities;
+package com.miguelbarrios.codesnippetapp.entities;
 
 public class File {
 	private String name;
