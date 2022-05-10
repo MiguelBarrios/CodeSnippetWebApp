@@ -1,6 +1,7 @@
 package com.miguelbarrios.codesnippetapp.controllers;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +32,11 @@ public class TreeController {
 	}
 	
 	@GetMapping("trees/{treename}")
-	public Directory getTree(@PathVariable String treename, HttpServletResponse res) {
+	public Directory getTree(@PathVariable String treename, HttpServletResponse res, HttpSession session) {
+		
+		User sessionUser = (User) session.getAttribute("user");
+		System.out.println("Session User: " + sessionUser);
+		
 		User user = new User();
 		user.setUsername("locnessbarrios");
 		Directory root = treeService.getTreeByName(treename, user);

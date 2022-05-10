@@ -2,12 +2,23 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Snippet Tree</title>
-</head>
-<body>
-	<h1>Snippet Tree Home</h1>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Snippet Tree</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <form action="login.do" method="POST">
+      <label for="username">username</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">password</label>
+      <input type="text" id="password" name="password"><br><br>
+      <input type="submit" value="Submit">
+    </form>
 
-</body>
+    <script src="scripts/scripts.js"></script>
+  </body>
 </html>
