@@ -7,6 +7,8 @@ public class SnippetTree {
 	@Id
 	private String treeId;
 	
+	private String username;
+	
 	private Directory root;
 	
 	public SnippetTree() {}
@@ -27,8 +29,18 @@ public class SnippetTree {
 		this.root = root;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
-		return "Tree [treeId=" + treeId + "]";
+		return "SnippetTree [treeId=" + treeId + ", username=" + username + "]";
 	}
+
+
 }
