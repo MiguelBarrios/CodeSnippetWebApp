@@ -22,6 +22,7 @@ public class SnippetTreeServiceImpl implements SnippetTreeService {
 		SnippetTree tree = new SnippetTree();
 		tree.setTreeId(treeid);
 		tree.setRoot(root);
+		tree.setUsername(user.getUsername());
 		tree = treeRepo.save(tree);
 		return tree.getRoot();
 	}
@@ -43,5 +44,10 @@ public class SnippetTreeServiceImpl implements SnippetTreeService {
 		tree.setRoot(root);
 		treeRepo.save(tree);
 		return tree.getRoot();
+	}
+	
+	public boolean deleteTree(User user, String treename) {
+		String treeid = user.getUsername() + ":" + treename;
+		return false;
 	}
 }

@@ -24,7 +24,7 @@ public class TreeController {
 	SnippetTreeService treeService;
 	
 	@PostMapping("trees")
-	public Directory addTree(@RequestBody Directory dir) {
+	public Directory createTree(@RequestBody Directory dir) {
 		User user = new User();
 		user.setUsername("locnessbarrios");
 		Directory res = treeService.addTree(dir, user);
@@ -32,13 +32,12 @@ public class TreeController {
 	}
 	
 	@GetMapping("trees/{treename}")
-	public Directory getTree(@PathVariable String treename, HttpServletResponse res, HttpSession session) {
+	public Directory getTree(@PathVariable String treename, HttpServletResponse res) {
 		
-		User sessionUser = (User) session.getAttribute("user");
-		System.out.println("Session User: " + sessionUser);
-		
+		//User user = (User) session.getAttribute("user");
 		User user = new User();
 		user.setUsername("locnessbarrios");
+
 		Directory root = treeService.getTreeByName(treename, user);
 		
 		if(root == null) {
