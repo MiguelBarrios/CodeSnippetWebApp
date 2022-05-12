@@ -28,3 +28,28 @@
   flex-direction: column;
   gap:5px;
 }
+
+/* User tree selection display */
+#userTreesDisplay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+  gap: 5%;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.userTreeName {
+  border: 1px solid transparent;
+  border-width: thick;
+  margin-bottom: 7px;
+}
+
+.userTreeName :hover {
+  margin-bottom: 0px;
+  border-bottom: solid;
+  border-width: thick;
+}
