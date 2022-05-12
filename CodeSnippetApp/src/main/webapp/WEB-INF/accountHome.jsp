@@ -18,6 +18,8 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+  	
+  	<h3> Logged in as ${username} </h3>
     <div id="selectedTreeContainer" class="border border-bottom-0 rounded-top">
       <h1 id="selectedTreeHeader">Java</h1>
     </div>

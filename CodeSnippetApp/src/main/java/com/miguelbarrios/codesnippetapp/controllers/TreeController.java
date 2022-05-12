@@ -1,5 +1,7 @@
 package com.miguelbarrios.codesnippetapp.controllers;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -53,6 +55,14 @@ public class TreeController {
 		user.setUsername("locnessbarrios");
 		Directory root = treeService.updateTree(dir, user);
 		return root;
-
 	}
+	
+	@GetMapping("trees/usertrees")
+	public Map<String, Directory> getUserTrees(HttpSession session){
+		User user = (User) session.getAttribute("user");
+		Map<String, Directory> map = treeService.getUserTrees(user);
+		return map;
+		
+	}
+	
 }
