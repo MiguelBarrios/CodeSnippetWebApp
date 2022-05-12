@@ -61,8 +61,10 @@ public class TreeController {
 	public Map<String, Directory> getUserTrees(HttpSession session){
 		User user = (User) session.getAttribute("user");
 		Map<String, Directory> map = treeService.getUserTrees(user);
-		return map;
-		
+		for(String treename : map.keySet()) {
+			System.out.println(treename + " : " + map.get(treename));
+		}
+		return map;	
 	}
 	
 }
