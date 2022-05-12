@@ -32,19 +32,10 @@ pageEncoding="UTF-8"%>
     <div id="displayWindow" class="border border-top-0 rounded-bottom">
       <div id="dir-java" class="directory-col">
         <button class="treeItem btn btn-light">Fundamentals</button>
-        <button class="treeItem btn btn-light">Advance</button>
-        <button class="treeItem btn btn-light">Spring</button>
-        <button class="treeItem btn btn-light">Spring Boot</button>
-        <button class="treeItem btn btn-light">JPA</button>
-        <button class="treeItem btn btn-light">JUnit</button>
-        <button onclick="addItemToTree(this)">Add</button>
       </div>
 
       <div id="dir-java-fundamentals" class="directory-col">
         <button class="treeItem btn btn-light">Arrays</button>
-        <button class="treeItem btn btn-light">Loops</button>
-        <button class="treeItem btn btn-light">Methods</button>
-        <button onclick="addItemToTree(this)">Add</button>
       </div>
     </div>
 
