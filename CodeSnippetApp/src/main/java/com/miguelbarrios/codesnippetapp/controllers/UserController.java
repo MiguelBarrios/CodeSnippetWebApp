@@ -5,8 +5,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.miguelbarrios.codesnippetapp.entities.User;
 import com.miguelbarrios.codesnippetapp.repositories.UserRepository;
@@ -24,16 +24,15 @@ public class UserController {
 	@GetMapping(path= {"/", "home.do"})
 	public String home() {
 		System.out.println("TEST TEst");
-		return "home";
+		return "WEB-INF/home.jsp";
 	}
 	
-	@PostMapping("login.do")
-	public ModelAndView login(User user, HttpSession session) {
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("username", user.getUsername());
+	@RequestMapping(path = "/login.do", method = RequestMethod.POST)
+	public String login(User user, HttpSession session) {
+		System.out.println("***");
+		System.out.println(user);
 		session.setAttribute("user", user);
-		mv.setViewName("accountHome");
-		return mv;
+		return "WEB-INF/accountHome.jsp";
 	}
 	
 	

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,8 +18,6 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-  
-    <h3> Logged in as ${username} </h3>
     
     <!-- User Trees Display -->
     <div id="userTreesDisplay">
@@ -96,6 +94,7 @@ pageEncoding="UTF-8"%>
     ></script>
     <script src="scripts/scripts.js"></script>
     <script src="scripts/editor.js"></script>
+    <script src="scripts/treeDisplay.js"></script>
     <!-- view display-->
 
     <script>
