@@ -1,5 +1,8 @@
 package com.miguelbarrios.codesnippetapp.services;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +52,15 @@ public class SnippetTreeServiceImpl implements SnippetTreeService {
 	public boolean deleteTree(User user, String treename) {
 		String treeid = user.getUsername() + ":" + treename;
 		return false;
+	}
+	
+	@Override
+	public Map<String, Directory> getUserTrees(User user){
+		List<SnippetTree> trees = treeRepo.findByUsername(user.getUsername());
+		Map<String, Directory> map = new HashMap<>();
+		for(SnippetTree tree : trees) {
+			map.put(tree.getRoot().getName(), tree.getRoot());
+		}
+		return map;
 	}
 }

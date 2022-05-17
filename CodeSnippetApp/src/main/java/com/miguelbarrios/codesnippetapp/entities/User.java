@@ -1,5 +1,7 @@
 package com.miguelbarrios.codesnippetapp.entities;
 
+import java.util.Set;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,6 +14,8 @@ public class User {
 	private String password;
 	
 	private String email;
+	
+	private Set<String> trees;
 
 	public User() {}
 	
@@ -45,10 +49,19 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+	public Set<String> getTrees() {
+		return trees;
+	}
+
+	public void setTrees(Set<String> trees) {
+		this.trees = trees;
+	}
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", email=" + email + "]";
+		return "User [username=" + username + ", password=" + password + ", email=" + email + ", trees=" + trees + "]";
 	}
 	
 	

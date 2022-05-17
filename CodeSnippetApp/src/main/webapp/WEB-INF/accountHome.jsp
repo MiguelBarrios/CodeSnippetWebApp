@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,6 +18,11 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    
+    <!-- User Trees Display -->
+    <div id="userTreesDisplay">
+    </div>
+  	
     <div id="selectedTreeContainer" class="border border-bottom-0 rounded-top">
       <h1 id="selectedTreeHeader">Java</h1>
     </div>
@@ -25,19 +30,10 @@ pageEncoding="UTF-8"%>
     <div id="displayWindow" class="border border-top-0 rounded-bottom">
       <div id="dir-java" class="directory-col">
         <button class="treeItem btn btn-light">Fundamentals</button>
-        <button class="treeItem btn btn-light">Advance</button>
-        <button class="treeItem btn btn-light">Spring</button>
-        <button class="treeItem btn btn-light">Spring Boot</button>
-        <button class="treeItem btn btn-light">JPA</button>
-        <button class="treeItem btn btn-light">JUnit</button>
-        <button onclick="addItemToTree(this)">Add</button>
       </div>
 
       <div id="dir-java-fundamentals" class="directory-col">
         <button class="treeItem btn btn-light">Arrays</button>
-        <button class="treeItem btn btn-light">Loops</button>
-        <button class="treeItem btn btn-light">Methods</button>
-        <button onclick="addItemToTree(this)">Add</button>
       </div>
     </div>
 
@@ -98,6 +94,7 @@ pageEncoding="UTF-8"%>
     ></script>
     <script src="scripts/scripts.js"></script>
     <script src="scripts/editor.js"></script>
+    <script src="scripts/treeDisplay.js"></script>
     <!-- view display-->
 
     <script>
