@@ -8,23 +8,24 @@
 
 <ng-template #Recursion let-folder="folder" let-path="path">
 
-  <div class="directory" id="{{path}}">
+  <!-- <div class="directory" id="{{path}}">
     <h3>--{{path}}--</h3>
     <button class="btn btn-primary" *ngFor="let directory of folder.directories" (click)="loadSelected(path +'-' + directory.name)">{{directory.name}}</button>
     <button class= "btn btn-light" *ngFor="let file of folder.files" (click)="loadSelected(path +'-' + '#' + '-' + file.name)">{{file.name}}</button>
-  </div>
+  </div> -->
 
 
-    <div *ngFor="let directory of folder.directories">
+    <div class="directory" id="{{path}}">
+      <h3>--{{path}}--</h3>
+      <button class="btn btn-primary" *ngFor="let directory of folder.directories" (click)="loadSelected(path +'-' + directory.name)">{{directory.name}}</button>
+      <button class= "btn btn-light" *ngFor="let file of folder.files" (click)="loadSelected(path +'-' + '#' + '-' + file.name)">{{file.name}}</button>
+    </div>
+
+    <ng-container *ngFor="let directory of folder.directories">
       <ng-container *ngTemplateOutlet="Recursion; context:{ folder: directory, path: path + '-' + directory.name.replace(' ', '_')}"></ng-container>
-    </div>
+    </ng-container>
 
-  <!-- <li *ngFor="let item of folder">
-    <a href="#">{{ item.name }}</a>
-    <div *ngIf="item.directories.length > 0">
-      <ng-container *ngTemplateOutlet="Recursion; context:{ folder: item.directories}"></ng-container>
-    </div>
-  </li> -->
+
 </ng-template>
 
 
