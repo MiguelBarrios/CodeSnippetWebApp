@@ -1,23 +1,32 @@
-<p>snippet-display works!</p>
-<!-- <div id="snippetDisplayContainer" *ngIf="root">
-  <div *ngFor="let directory of root.directories">{{directory.name}}</div>
-  <div *ngFor="let file of root.files">{{file.name}}</div>
-</div> -->
+<h4>Snippet Tree</h4>
+<button class="btn btn-primary" (click)="loadSelected('Java')">LoadJava</button>
+
+<div *ngIf="root" id="display">
+  <ng-container *ngTemplateOutlet="Recursion; context:{ folder: root, path: root.name}"></ng-container>
+</div>
 
 
-<ul *ngIf="root">
-  <ng-container
-    *ngTemplateOutlet="Recursion; context:{ list: root.directories}"
-  ></ng-container>
-</ul>
+<ng-template #Recursion let-folder="folder" let-path="path">
+
+  <div class="directory" id="{{path}}">
+    <h3>--{{path}}--</h3>
+    <button class="btn btn-primary" *ngFor="let directory of folder.directories" (click)="loadSelected(path +'-' + directory.name)">{{directory.name}}</button>
+    <button class= "btn btn-light" *ngFor="let file of folder.files" (click)="loadSelected(path +'-' + '#' + '-' + file.name)">{{file.name}}</button>
+  </div>
 
 
+    <div *ngFor="let directory of folder.directories">
+      <ng-container *ngTemplateOutlet="Recursion; context:{ folder: directory, path: path + '-' + directory.name.replace(' ', '_')}"></ng-container>
+    </div>
 
-<ng-template #Recursion let-list="list">
-  <li *ngFor="let item of list">
+  <!-- <li *ngFor="let item of folder">
     <a href="#">{{ item.name }}</a>
-    <ul *ngIf="item.directories.length > 0">
-      <ng-container *ngTemplateOutlet="Recursion; context:{ list: item.directories}"></ng-container>
-    </ul>
-  </li>
+    <div *ngIf="item.directories.length > 0">
+      <ng-container *ngTemplateOutlet="Recursion; context:{ folder: item.directories}"></ng-container>
+    </div>
+  </li> -->
 </ng-template>
+
+
+
+

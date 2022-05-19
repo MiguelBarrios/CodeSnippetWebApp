@@ -1,0 +1,18 @@
+.hidden {
+  display: none!important;
+  visibility: hidden!important;
+}
+
+#display {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.directory {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  padding: 1%;
+  gap: 10px;
+}

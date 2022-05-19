@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SnippetDisplayComponent } from './components/snippet-display/snippet-display.component';
 import { TreeService } from './services/tree.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     TreeService

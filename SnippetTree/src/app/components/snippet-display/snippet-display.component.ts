@@ -17,6 +17,12 @@ export class SnippetDisplayComponent implements OnInit {
     this.loadTree("Java");
   }
 
+  loadSelected(pathstr:string){
+    var path = pathstr.split('-');
+    console.log(path);
+
+  }
+
   loadTree(treeName:string){
     this.treeService.getTreeByName(treeName).subscribe(
       (success)=> {
