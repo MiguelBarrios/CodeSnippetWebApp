@@ -25,7 +25,6 @@ export class SnippetDisplayComponent implements OnInit {
     var directories = document.getElementsByClassName('directory');
     for(let i = 0; i < directories.length; ++i){
       let cur = directories[i];
-      console.log(cur);
       cur.classList.add('hidden');
     }
 
@@ -35,7 +34,6 @@ export class SnippetDisplayComponent implements OnInit {
 
     for(let i = 1; i < path.length; ++i){
       fullPath = fullPath + '-' + path[i].replace(' ', '_');
-      console.log(fullPath);
       document.getElementById(fullPath)?.classList.remove('hidden');
     }
 
