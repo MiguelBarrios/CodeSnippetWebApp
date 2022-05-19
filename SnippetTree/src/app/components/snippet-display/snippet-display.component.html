@@ -1,2 +1,23 @@
 <p>snippet-display works!</p>
-<button (click)="getTreeByTreeName()">get Tree</button>
+<!-- <div id="snippetDisplayContainer" *ngIf="root">
+  <div *ngFor="let directory of root.directories">{{directory.name}}</div>
+  <div *ngFor="let file of root.files">{{file.name}}</div>
+</div> -->
+
+
+<ul *ngIf="root">
+  <ng-container
+    *ngTemplateOutlet="Recursion; context:{ list: root.directories}"
+  ></ng-container>
+</ul>
+
+
+
+<ng-template #Recursion let-list="list">
+  <li *ngFor="let item of list">
+    <a href="#">{{ item.name }}</a>
+    <ul *ngIf="item.directories.length > 0">
+      <ng-container *ngTemplateOutlet="Recursion; context:{ list: item.directories}"></ng-container>
+    </ul>
+  </li>
+</ng-template>

@@ -14,10 +14,11 @@ export class SnippetDisplayComponent implements OnInit {
   constructor(private treeService: TreeService) { }
 
   ngOnInit(): void {
+    this.loadTree("Java");
   }
 
-  getTreeByTreeName(){
-    this.treeService.getTreeByName("Java").subscribe(
+  loadTree(treeName:string){
+    this.treeService.getTreeByName(treeName).subscribe(
       (success)=> {
         this.root = success;
         console.log("Succes getting request");
