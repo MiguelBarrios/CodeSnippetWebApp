@@ -1,0 +1,26 @@
+<h4>Snippet Tree</h4>
+<button class="btn btn-primary" (click)="loadSelected('Java')">LoadJava</button>
+
+<div *ngIf="root" id="display">
+  <ng-container *ngTemplateOutlet="Recursion; context:{ folder: root, path: root.name}"></ng-container>
+</div>
+
+
+<ng-template #Recursion let-folder="folder" let-path="path">
+
+    <div class="directory" id="{{path}}">
+      <p>{{path}}</p>
+      <button class="btn btn-primary" *ngFor="let directory of folder.directories" (click)="loadSelected(path +'-' + directory.name)">{{directory.name}}</button>
+      <button class= "btn btn-light" *ngFor="let file of folder.files" (click)="loadSelected(path +'-' + '#' + '-' + file.name)">{{file.name}}</button>
+    </div>
+
+    <ng-container *ngFor="let directory of folder.directories">
+      <ng-container *ngTemplateOutlet="Recursion; context:{ folder: directory, path: path + '-' + directory.name.replace(' ', '_')}"></ng-container>
+    </ng-container>
+
+
+</ng-template>
+
+
+
+
